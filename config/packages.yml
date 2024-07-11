@@ -23,13 +23,8 @@ repositories:
   alidist:
     update: 1
 
-  AliPhysics:
-    update: 1
-    build: 1
-    origin: "origin"
-
   O2:
-    update: 1
+    update: 0
     build: 1
     origin: "origin"
     branch: "dev"
@@ -41,3 +36,4 @@ repositories:
 
   Run3Analysisvalidation:
     update: 1
+    path: "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation"
