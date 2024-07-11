@@ -36,7 +36,7 @@ workflows:
       - o2-analysis-track-to-collision-associator
       # - o2-analysis-centrality_runX
       - o2-analysis-multiplicity-table_runX
-      - o2-analysis-pid-tpc-full
+      - o2-analysis-pid-tpc
     tables: [HF2PRONG/1, HF3PRONG/1, HFDSTAR, HFCASCADE/1, HFCASCLF2PRONG, HFCASCLF3PRONG, HFCUTSTATUS2P, HFCUTSTATUS3P, HFPVREFIT2PRONG, HFPVREFIT3PRONG, HFPVREFITTRACK, HFSELCOLLISION, HFSELTRACK]
 
   o2-analysis-hf-track-index-skim-creator_v0:
@@ -145,12 +145,15 @@ workflows:
       default: [HFCANDTOXIPI, HFCANDTOOMEGAPI, HFCANDTOOMEGAK]
       mc: [HFXICXIPIMCREC, HFOMCXIPIMCREC, HFTOOMEPIMCREC, HFTOOMEKMCREC, HFXICXIPIMCGEN, HFOMECXIPIMCGEN, HFTOOMEPIMCGEN, HFTOOMEKMCGEN]
 
+  o2-analysis-hf-candidate-creator-xic-to-xi-pi-pi:
+    dependencies: o2-analysis-hf-track-index-skim-creator_skimX
+
   # Selectors
 
   o2-analysis-hf-candidate-selector-d0: &selector_2prong
     dependencies:
       - o2-analysis-hf-candidate-creator-2prong_derX
-      - o2-analysis-pid-tpc-full
+      - o2-analysis-pid-tpc
       - o2-analysis-pid-tof-full_runX
       - o2-analysis-hf-pid-creator
     tables: HFSELD0
@@ -170,7 +173,7 @@ workflows:
   o2-analysis-hf-candidate-selector-dplus-to-pi-k-pi: &selector_3prong
     dependencies:
       - o2-analysis-hf-candidate-creator-3prong_derX
-      - o2-analysis-pid-tpc-full
+      - o2-analysis-pid-tpc
       - o2-analysis-pid-tof-full_runX
       - o2-analysis-hf-pid-creator
     tables: HFSELDPLUS
@@ -186,7 +189,7 @@ workflows:
   o2-analysis-hf-candidate-selector-lc:
     dependencies:
       - o2-analysis-hf-candidate-creator-3prong_derX
-      - o2-analysis-pid-tpc-full
+      - o2-analysis-pid-tpc
       - o2-analysis-pid-tof-full_runX
       - o2-analysis-pid-bayes
       - o2-analysis-hf-pid-creator
@@ -199,7 +202,7 @@ workflows:
   o2-analysis-hf-candidate-selector-dstar-to-d0-pi:
     dependencies:
       - o2-analysis-hf-candidate-creator-dstar_derX
-      - o2-analysis-pid-tpc-full
+      - o2-analysis-pid-tpc
       - o2-analysis-pid-tof-full_runX
       - o2-analysis-hf-pid-creator
     tables: HFSELDSTAR
@@ -207,7 +210,7 @@ workflows:
   o2-analysis-hf-candidate-selector-lc-to-k0s-p:
     dependencies:
       - o2-analysis-hf-candidate-creator-cascade
-      - o2-analysis-pid-tpc-full
+      - o2-analysis-pid-tpc
       - o2-analysis-pid-tof-full_runX
       - o2-analysis-pid-bayes
       - o2-analysis-hf-pid-creator
@@ -241,6 +244,12 @@ workflows:
       - o2-analysis-multiplicity-table_runX
     tables: HFSELTOXIPI
 
+  o2-analysis-hf-candidate-selector-xic-to-xi-pi-pi:
+    dependencies:
+      - o2-analysis-hf-candidate-creator-xic-to-xi-pi-pi
+      - o2-analysis-pid-tof-full_runX
+      - o2-analysis-multiplicity-table_runX
+
   # Analysis tasks
 
   o2-analysis-hf-task-d0:
@@ -268,6 +277,9 @@ workflows:
 
   o2-analysis-hf-task-xic:
     dependencies: o2-analysis-hf-candidate-selector-xic-to-p-k-pi
+
+  o2-analysis-hf-task-xic-to-xi-pi-pi:
+    dependencies: o2-analysis-hf-candidate-selector-xic-to-xi-pi-pi
 
   o2-analysis-hf-task-b0:
     dependencies: o2-analysis-hf-candidate-selector-b0-to-d-pi
@@ -337,6 +349,9 @@ workflows:
     dependencies: o2-analysis-hf-candidate-selector-to-xi-pi
     tables: [HFTOXIPIEV, HFTOXIPIFULL, HFTOXIPILITE]
 
+  o2-analysis-hf-tree-creator-xic-to-xi-pi-pi:
+    dependencies: o2-analysis-hf-candidate-selector-xic-to-xi-pi-pi
+
   # Derived-data creators
 
   o2-analysis-hf-derived-data-creator-d0-to-k-pi:
@@ -348,7 +363,7 @@ workflows:
       - o2-analysis-multiplicity-table_runX
       - o2-analysis-track-dca_runX
       - o2-analysis-pid-tof-full_runX
-      - o2-analysis-pid-tpc-full
+      - o2-analysis-pid-tpc
     tables: [HFD0COLLBASE, HFD0COLLID, HFD0BASE, HFD0PAR, HFD0PARE, HFD0SEL, HFD0ML, HFD0ID, HFD0MC, HFD0PBASE, HFD0PID]
 
   o2-analysis-hf-derived-data-creator-lc-to-p-k-pi:
@@ -360,7 +375,7 @@ workflows:
       - o2-analysis-multiplicity-table_runX
       - o2-analysis-track-dca_runX
       - o2-analysis-pid-tof-full_runX
-      - o2-analysis-pid-tpc-full
+      - o2-analysis-pid-tpc
     tables: [HF3PCOLLBASE, HF3PCOLLID, HF3PBASE, HF3PPAR, HF3PPARE, HF3PSEL, HF3PML, HF3PID, HF3PMC, HF3PPBASE, HF3PPID]
 
   # D meson correlations
@@ -425,7 +440,7 @@ workflows:
   # HF helpers
 
   o2-analysis-hf-pid-creator:
-    dependencies: [o2-analysis-pid-tpc-full, o2-analysis-pid-tof-full_runX]
+    dependencies: [o2-analysis-pid-tpc, o2-analysis-pid-tof-full_runX]
 
   # Jets
 
@@ -507,7 +522,7 @@ workflows:
 
   o2-analysis-hf-task-qa-pid-rejection:
     requires_mc: yes
-    dependencies: [o2-analysis-hf-track-index-skim-creator_skimX, o2-analysis-pid-tpc-full, o2-analysis-pid-tof-full_runX]
+    dependencies: [o2-analysis-hf-track-index-skim-creator_skimX, o2-analysis-pid-tpc, o2-analysis-pid-tof-full_runX]
 
   o2-analysis-pid-tof-qa-mc:
     requires_mc: yes
@@ -572,7 +587,7 @@ workflows:
 
   o2-analysis-pid-tpc-base: {}
 
-  o2-analysis-pid-tpc-full:
+  o2-analysis-pid-tpc:
     dependencies: [o2-analysis-pid-tpc-base, o2-analysis-timestamp]
 
   o2-analysis-pid-tof-base_run2:
@@ -595,7 +610,7 @@ workflows:
     executable: o2-analysis-alice3-pid-tof
 
   o2-analysis-pid-bayes:
-    dependencies: [o2-analysis-pid-tof-full_runX, o2-analysis-pid-tpc-full, o2-analysis-multiplicity-table_runX]
+    dependencies: [o2-analysis-pid-tof-full_runX, o2-analysis-pid-tpc, o2-analysis-multiplicity-table_runX]
 
   o2-analysis-pid-tof-beta: {}
 
@@ -618,7 +633,7 @@ workflows:
   # LF
 
   o2-analysis-lf-lambdakzerobuilder:
-    dependencies: [o2-analysis-timestamp, o2-analysis-track-dca_runX, o2-analysis-pid-tpc-full]
+    dependencies: [o2-analysis-timestamp, o2-analysis-track-dca_runX, o2-analysis-pid-tpc]
 
   o2-analysis-lf-cascadebuilder:
-    dependencies: [o2-analysis-timestamp, o2-analysis-track-dca_runX, o2-analysis-pid-tpc-full]
+    dependencies: [o2-analysis-timestamp, o2-analysis-track-dca_runX, o2-analysis-pid-tpc]
