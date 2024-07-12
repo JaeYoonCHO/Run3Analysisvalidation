@@ -155,7 +155,7 @@ case $INPUT_CASE in
     ;;
   17)
     INPUT_LABEL="My task for Xic0"
-    INPUT_DIR="/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF"
+    INPUT_DIR="/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/derivedAO2D/"
     INPUT_FILES="AO2D.root"
     INPUT_RUN=3
     INPUT_IS_O2=1
