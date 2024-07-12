@@ -17,19 +17,19 @@ CONFIG_TASKS="config_tasks.sh"  # Task configuration (Cleans directory, modifies
 # Steps
 DOCLEAN=1        # Delete created files (before and after running tasks).
 DOCONVERT=1      # Convert AliESDs.root to AO2D.root.
-DOALI=0          # Run AliPhysics tasks.
+DOALI=1          # Run AliPhysics tasks.
 DOO2=1           # Run O2 tasks.
 DOPOSTPROCESS=1  # Run output postprocessing. (Compare AliPhysics and O2 output.)
 
 # Input parameters
-INPUT_CASE=17                   # Input case
+INPUT_CASE=-1                   # Input case
 INPUT_LABEL="nothing"           # Input description
 INPUT_DIR="$PWD"                # Input directory
 INPUT_FILES="AliESDs.root"      # Input file pattern
 INPUT_SYS="pp"                  # Collision system ("pp", "PbPb")
-INPUT_RUN=3                     # LHC Run (2, 3, 5)
-INPUT_IS_O2=1                   # Input files are in O2 format.
-INPUT_IS_MC=1                   # Input files are MC data.
+INPUT_RUN=2                     # LHC Run (2, 3, 5)
+INPUT_IS_O2=0                   # Input files are in O2 format.
+INPUT_IS_MC=0                   # Input files are MC data.
 INPUT_PARENT_MASK=""            # Path replacement mask for the input directory of parent files in case of linked derived O2 input. Set to ";" if no replacement needed.
 INPUT_TASK_CONFIG=""            # Input-specific task configuration (e.g. enabling converters), overriding the task configuration in CONFIG_TASKS. String of space-separated commands.
 JSON="dpl-config.json"          # O2 device configuration
