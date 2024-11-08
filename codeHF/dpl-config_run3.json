@@ -5807,7 +5807,72 @@
         "ptPidTofMin": "0.15",
         "ptPidTofMax": "20",
         "nSigmaTofMax": "5",
-        "nSigmaTofCombinedMax": "5"
+        "nSigmaTofCombinedMax": "5",
+        "applyMl": "true",
+        "binsPtMl": {
+            "values": [
+                "4",
+                "6",
+                "8",
+                "12"
+            ]
+        },
+        "cutDirMl": {
+            "values": [
+                "0",
+                "0"
+            ]
+        },
+        "cutsMl": {
+            "labels_rows": [
+                "pT bin 0",
+                "pT bin 1",
+                "pT bin 2"
+            ],
+            "labels_cols": [
+                "score class 1",
+                "score class 2"
+            ],
+            "values": [
+                [
+                    "0.5",
+                    "0.5"
+                ],
+                [
+                    "0.5",
+                    "0.5"
+                ],
+                [
+                    "0.5",
+                    "0.5"
+                ]
+            ]
+        },
+        "nClassesMl": "2",
+        "namesInputFeatures": {
+            "values": [
+                "cpa",
+                "decayLength",
+                "cosPaLambda"
+            ]
+        },
+        "ccdbUrl": "http://alice-ccdb.cern.ch",
+        "modelPathsCCDB": {
+            "values": [
+                "Users/j/jcho/My/Object/model_4_to_6",
+                "Users/j/jcho/My/Object/model_6_to_8",
+                "Users/j/jcho/My/Object/model_8_to_12"
+            ]
+        },
+        "onnxFileNames": {
+            "values": [
+                "model_onnx_4_to_6.onnx",
+                "model_onnx_6_to_8.onnx",
+                "model_onnx_8_to_12.onnx"
+            ]
+        },
+        "timestampCCDB": "-1",
+        "loadModelsFromCCDB": "true"
     },
     "hf-pid-creator": {
         "processDummy": "false",
@@ -7252,15 +7317,40 @@
         "ITSROFrameEndBorderMargin": "-1",
         "TimeFrameStartBorderMargin": "-1",
         "TimeFrameEndBorderMargin": "-1",
-        "processRun2": "true",
-        "processRun3": "false"
+        "processRun2": "false",
+        "processRun3": "true"
     },
     "event-selection-task": {
         "syst": "pp",
         "muonSelection": "0",
         "maxDiffZvtxFT0vsPV": "1",
-        "isMC": "true",
-        "TimeIntervalForOccupancyCalculation": "100",
+        "isMC": "0",
+        "TimeIntervalForOccupancyCalculationMin": "-40",
+        "TimeIntervalForOccupancyCalculationMax": "100",
+        "TimeBinsForOccupancyCalculation": {
+            "values": [
+                "-40",
+                "-20",
+                "0",
+                "25",
+                "50",
+                "75",
+                "100"
+            ]
+        },
+        "ReferenceOccupanciesInTimeBins": {
+            "values": [
+                "3000",
+                "1400",
+                "750",
+                "1000",
+                "1750",
+                "4000"
+            ]
+        },
+        "TimeRangeVetoOnCollStandard": "10",
+        "TimeRangeVetoOnCollNarrow": "4",
+        "UseWeightsForOccupancyEstimator": "true",
         "processRun2": "true",
         "processRun3": "false"
     },
@@ -7325,7 +7415,7 @@
                 "FT0MultZeqs",
                 "FDDMultZeqs",
                 "PVMultZeqs",
-                "MultsExtraMC"
+                "MultMCExtras"
             ],
             "labels_cols": [
                 "Enable"
@@ -7378,8 +7468,8 @@
         "ccdburl": "http://alice-ccdb.cern.ch",
         "ccdbpath": "Centrality/Calibration",
         "produceHistograms": "false",
-        "processRun2": "true",
-        "processRun3": "false",
+        "processRun2": "false",
+        "processRun3": "true",
         "processGlobalTrackingCounters": "false",
         "processMC": "true"
     },
