@@ -5835,16 +5835,16 @@
             ],
             "values": [
                 [
-                    "0.5",
-                    "0.5"
+                    "0.0",
+                    "0.0"
                 ],
                 [
-                    "0.5",
-                    "0.5"
+                    "0.0",
+                    "0.0"
                 ],
                 [
-                    "0.5",
-                    "0.5"
+                    "0.0",
+                    "0.0"
                 ]
             ]
         },
@@ -6580,7 +6580,78 @@
             ]
         },
         "checkDecayTypeMc": "false",
-        "processMc": "false"
+        "enableTHn": "true",
+        "thnConfigAxisPt": {
+            "values": [
+                "400",
+                "0",
+                "40"
+            ]
+        },
+        "thnConfigAxisMass": {
+            "values": [
+                "300",
+                "1.8",
+                "3.0"
+            ]
+        },
+        "thnConfigAxisPtProng": {
+            "values": [
+                "300",
+                "0",
+                "30"
+            ]
+        },
+        "thnConfigAxisChi2PCA": {
+            "values": [
+                "200",
+                "0",
+                "20"
+            ]
+        },
+        "thnConfigAxisDecLength": {
+            "values": [
+                "200",
+                "0",
+                "0.5"
+            ]
+        },
+        "thnConfigAxisDecLengthXY": {
+            "values": [
+                "200",
+                "0",
+                "0.5"
+            ]
+        },
+        "thnConfigAxisCPA": {
+            "values": [
+                "110",
+                "-1.1",
+                "1.1"
+            ]
+        },
+        "thnConfigAxisBdtScoreBkg": {
+            "values": [
+                "100",
+                "0",
+                "1"
+            ]
+        },
+        "thnConfigAxisBdtScoreSignal": {
+            "values": [
+                "100",
+                "0",
+                "1"
+            ]
+        },
+        "processWithDCAFitter": "false",
+        "processWithKFParticle": "false",
+        "processWithDCAFitterAndML": "true",
+        "processWithKFParticleAndML": "false",
+        "processMcWithDCAFitter": "false",
+        "processMcWithKFParticle": "false",
+        "processMcWithDCAFitterAndML": "false",
+        "processMcWithKFParticleAndML": "false"
     },
     "hf-task-mc-validation-gen": {
         "xVertexMin": "-100",
