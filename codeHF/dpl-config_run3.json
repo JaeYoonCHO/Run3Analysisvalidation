@@ -1179,8 +1179,8 @@
         "constrainXicPlusToPv": "false",
         "kfConstructMethod": "0",
         "rejDiffCollTrack": "true",
-        "processXicplusWithDcaFitter": "false",
-        "processXicplusWithKFParticle": "true"
+        "processXicplusWithDcaFitter": "true",
+        "processXicplusWithKFParticle": "false"
     },
     "hf-candidate-creator-xic-to-xi-pi-pi-expressions": {
         "processMc": "true"
@@ -5797,7 +5797,7 @@
                 ]
             ]
         },
-        "activateQA": "false",
+        "activateQA": "true",
         "usePid": "true",
         "acceptPIDNotApplicable": "true",
         "ptPidTpcMin": "0.15",
@@ -5808,7 +5808,7 @@
         "ptPidTofMax": "20",
         "nSigmaTofMax": "5",
         "nSigmaTofCombinedMax": "5",
-        "applyMl": "true",
+        "applyMl": "false",
         "binsPtMl": {
             "values": [
                 "4",
@@ -6648,8 +6648,8 @@
         "processWithKFParticle": "false",
         "processWithDCAFitterAndML": "false",
         "processWithKFParticleAndML": "false",
-        "processMcWithDCAFitter": "false",
-        "processMcWithKFParticle": "true",
+        "processMcWithDCAFitter": "true",
+        "processMcWithKFParticle": "false",
         "processMcWithDCAFitterAndML": "false",
         "processMcWithKFParticleAndML": "false"
     },
@@ -6711,7 +6711,7 @@
         "processData": "false",
         "processDataKf": "false",
         "processMc": "true",
-        "processMcKf": "true",
+        "processMcKf": "false",
         "processResiduals": "false"
     },
     "hf-derived-data-creator-d0-to-k-pi": {

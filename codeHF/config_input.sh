@@ -4,7 +4,7 @@
 # Input specification for runtest.sh
 # (Modifies input parameters.)
 
-INPUT_CASE=17            # Input case
+INPUT_CASE=18            # Input case
 
 NFILESMAX=1             # Maximum number of processed input files. (Set to -0 to process all; to -N to process all but the last N files.)
 
@@ -161,5 +161,15 @@ case $INPUT_CASE in
     INPUT_IS_O2=1
     INPUT_IS_MC=1
     INPUT_PARENT_MASK="/home/alitrain/train-workdir/testdata/LFN/alice/sim/2024/LHC24e3/3/527041/AOD/;/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/parentAO2D/"
+    ;;
+   18)
+    INPUT_LABEL="My task for XicToXiPiPi"
+    INPUT_DIR="/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/derivedAO2D/"
+    INPUT_FILES="AO2D.root"
+    INPUT_RUN=3
+    INPUT_IS_O2=1
+    INPUT_IS_MC=1
+    INPUT_TASK_CONFIG="DOO2_CONV_MCCOLL=1 DOO2_CONV_TRKEX_1_2=1 DOO2_CONV_TRKEX=1"
+    INPUT_PARENT_MASK="/home/alitrain/train-workdir/testdata/LFN/alice/sim/2024/LHC24e3/1/528531/AOD/;/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/parentAO2D/"
     ;;
   esac

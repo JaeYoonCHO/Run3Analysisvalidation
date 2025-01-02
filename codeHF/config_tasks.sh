@@ -66,7 +66,7 @@ DOO2_SEL_B0=0       # hf-candidate-selector-b0-to-d-pi
 DOO2_SEL_BPLUS=0    # hf-candidate-selector-bplus-to-d0-pi
 DOO2_SEL_DSTAR=0    # hf-candidate-selector-dstar
 DOO2_SEL_TOXIPI=0   # hf-candidate-selector-to-xi-pi
-DOO2_SEL_XIC_XIPIPI=0   # hf-candidate-selector-xic-to-xi-pi-pi
+DOO2_SEL_XIC_XIPIPI=1   # hf-candidate-selector-xic-to-xi-pi-pi
 # Analysis tasks
 DOO2_TASK_D0=0      # hf-task-d0
 DOO2_TASK_DS=0      # hf-task-ds
@@ -133,6 +133,7 @@ DOO2_CONV_ZDC=0     # zdc-converter
 DOO2_CONV_BC=0      # bc-converter
 DOO2_CONV_TRKEX=0   # tracks-extra-converter
 DOO2_CONV_V0=0      # v0converter
+DOO2_CONV_MCCOLL=0  # mccollision-converter
 
 # Selection cuts
 APPLYCUTS_D0=1      # Apply D0 selection cuts.
@@ -533,8 +534,9 @@ function MakeScriptO2 {
   [ $DOO2_CONV_COLL -eq 1 ] && WORKFLOWS+=" o2-analysis-collision-converter"
   [ $DOO2_CONV_ZDC -eq 1 ] && WORKFLOWS+=" o2-analysis-zdc-converter"
   [ $DOO2_CONV_BC -eq 1 ] && WORKFLOWS+=" o2-analysis-bc-converter"
-  [ $DOO2_CONV_TRKEX -eq 1 ] && WORKFLOWS+=" o2-analysis-tracks-extra-converter"
+  [ $DOO2_CONV_TRKEX -eq 1 ] && WORKFLOWS+=" o2-analysis-tracks-extra-v002-converter"
   [ $DOO2_CONV_V0 -eq 1 ] && WORKFLOWS+=" o2-analysis-v0converter"
+  [ $DOO2_CONV_MCCOLL -eq 1 ] && WORKFLOWS+=" o2-analysis-mccollision-converter"
 
   # Translate options into arguments of the generating script.
   OPT_MAKECMD=""
