@@ -1181,7 +1181,7 @@
         "processXicplusWithKFParticle": "false"
     },
     "hf-candidate-creator-xic-to-xi-pi-pi-expressions": {
-        "processMc": "false"
+        "processMc": "true"
     },
     "hf-candidate-selector-b0-to-d-pi": {
         "ptCandMin": "0",
@@ -5860,17 +5860,145 @@
                 ]
             ]
         },
-        "activateQA": "false",
+        "activateQA": "true",
         "usePid": "true",
         "acceptPIDNotApplicable": "true",
-        "ptPidTpcMin": "0.15",
+        "ptPidTpcMin": "0.150000006",
         "ptPidTpcMax": "20",
         "nSigmaTpcMax": "5",
         "nSigmaTpcCombinedMax": "5",
-        "ptPidTofMin": "0.15",
+        "ptPidTofMin": "0.150000006",
         "ptPidTofMax": "20",
         "nSigmaTofMax": "5",
-        "nSigmaTofCombinedMax": "5"
+        "nSigmaTofCombinedMax": "5",
+        "applyMl": "false",
+        "binsPtMl": {
+            "values": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "8",
+                "10",
+                "12",
+                "16",
+                "24",
+                "50"
+            ]
+        },
+        "cutDirMl": {
+            "values": [
+                "0",
+                "1",
+                "1"
+            ]
+        },
+        "cutsMl": {
+            "labels_rows": [
+                "pT bin 0",
+                "pT bin 1",
+                "pT bin 2",
+                "pT bin 3",
+                "pT bin 4",
+                "pT bin 5",
+                "pT bin 6",
+                "pT bin 7",
+                "pT bin 8",
+                "pT bin 9",
+                "pT bin 10",
+                "pT bin 11"
+            ],
+            "labels_cols": [
+                "score class 1",
+                "score class 2",
+                "score class 3"
+            ],
+            "values": [
+                [
+                    "0.5",
+                    "0.5",
+                    "0.5"
+                ],
+                [
+                    "0.5",
+                    "0.5",
+                    "0.5"
+                ],
+                [
+                    "0.5",
+                    "0.5",
+                    "0.5"
+                ],
+                [
+                    "0.5",
+                    "0.5",
+                    "0.5"
+                ],
+                [
+                    "0.5",
+                    "0.5",
+                    "0.5"
+                ],
+                [
+                    "0.5",
+                    "0.5",
+                    "0.5"
+                ],
+                [
+                    "0.5",
+                    "0.5",
+                    "0.5"
+                ],
+                [
+                    "0.5",
+                    "0.5",
+                    "0.5"
+                ],
+                [
+                    "0.5",
+                    "0.5",
+                    "0.5"
+                ],
+                [
+                    "0.5",
+                    "0.5",
+                    "0.5"
+                ],
+                [
+                    "0.5",
+                    "0.5",
+                    "0.5"
+                ],
+                [
+                    "0.5",
+                    "0.5",
+                    "0.5"
+                ]
+            ]
+        },
+        "nClassesMl": "3",
+        "namesInputFeatures": {
+            "values": [
+                "feature1",
+                "feature2"
+            ]
+        },
+        "ccdbUrl": "http:\/\/alice-ccdb.cern.ch",
+        "modelPathsCCDB": {
+            "values": [
+                "EventFiltering\/PWGHF\/BDTXicToXiPiPi"
+            ]
+        },
+        "onnxFileNames": {
+            "values": [
+                "ModelHandler_onnx_XicToXiPiPi.onnx"
+            ]
+        },
+        "timestampCCDB": "-1",
+        "loadModelsFromCCDB": "false"
     },
     "hf-pid-creator": {
         "processDummy": "false",
@@ -6574,9 +6702,9 @@
     "hf-task-xic-to-xi-pi-pi": {
         "selectionFlagXic": "1",
         "yCandGenMax": "0.5",
-        "yCandRecoMax": "0.8",
-        "etaTrackMax": "0.8",
-        "ptTrackMin": "0.1",
+        "yCandRecoMax": "0.800000012",
+        "etaTrackMax": "0.800000012",
+        "ptTrackMin": "0.100000001",
         "binsPt": {
             "values": [
                 "0",
@@ -6593,7 +6721,120 @@
             ]
         },
         "checkDecayTypeMc": "false",
-        "processMc": "false"
+        "enableTHn": "false",
+        "thnConfigAxisPt": {
+            "values": [
+                "400",
+                "0",
+                "40"
+            ]
+        },
+        "thnConfigAxisMass": {
+            "values": [
+                "300",
+                "1.8",
+                "3"
+            ]
+        },
+        "thnConfigAxisPtProng": {
+            "values": [
+                "300",
+                "0",
+                "30"
+            ]
+        },
+        "thnConfigAxisChi2PCA": {
+            "values": [
+                "200",
+                "0",
+                "20"
+            ]
+        },
+        "thnConfigAxisDecLength": {
+            "values": [
+                "200",
+                "0",
+                "0.5"
+            ]
+        },
+        "thnConfigAxisDecLengthXY": {
+            "values": [
+                "200",
+                "0",
+                "0.5"
+            ]
+        },
+        "thnConfigAxisCPA": {
+            "values": [
+                "110",
+                "-1.1000000000000001",
+                "1.1000000000000001"
+            ]
+        },
+        "thnConfigAxisBdtScoreBkg": {
+            "values": [
+                "100",
+                "0",
+                "1"
+            ]
+        },
+        "thnConfigAxisBdtScoreSignal": {
+            "values": [
+                "100",
+                "0",
+                "1"
+            ]
+        },
+        "binsDecLength": {
+            "values": [
+                "200",
+                "0",
+                "0.5"
+            ]
+        },
+        "binsErrDecLength": {
+            "values": [
+                "100",
+                "0",
+                "1"
+            ]
+        },
+        "binsDCA": {
+            "values": [
+                "100",
+                "-0.050000000000000003",
+                "0.050000000000000003"
+            ]
+        },
+        "binsImpParErr": {
+            "values": [
+                "200",
+                "-0.10000000000000001",
+                "0.10000000000000001"
+            ]
+        },
+        "binsSV": {
+            "values": [
+                "200",
+                "-5",
+                "5"
+            ]
+        },
+        "binsChi2": {
+            "values": [
+                "200",
+                "0",
+                "0.10000000000000001"
+            ]
+        },
+        "processWithDCAFitter": "false",
+        "processWithKFParticle": "false",
+        "processWithDCAFitterAndML": "false",
+        "processWithKFParticleAndML": "false",
+        "processMcWithDCAFitter": "true",
+        "processMcWithKFParticle": "false",
+        "processMcWithDCAFitterAndML": "false",
+        "processMcWithKFParticleAndML": "false"
     },
     "hf-task-mc-validation-gen": {
         "xVertexMin": "-100",
@@ -6644,17 +6885,18 @@
         "processMcLiteOmegac0": "false"
     },
     "hf-tree-creator-xic-to-xi-pi-pi": {
-        "selectionXic": "1",
+        "selectionFlagXic": "1",
         "fillCandidateLiteTable": "false",
-        "fillCandidateDauIndexTable": "false",
+        "fillGenParticleTable": "false",
         "fillOnlySignal": "false",
         "fillOnlyBackground": "false",
         "downSampleBkgFactor": "1",
         "ptMaxForDownSample": "10",
-        "processData": "true",
+        "processData": "false",
         "processDataKf": "false",
-        "processMc": "false",
-        "processMcKf": "false"
+        "processMc": "true",
+        "processMcKf": "false",
+        "processResiduals": "false"
     },
     "hf-derived-data-creator-d0-to-k-pi": {
         "fillCandidateBase": "true",
