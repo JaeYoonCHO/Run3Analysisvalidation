@@ -22,7 +22,7 @@
 # Steps
 DOCLEAN=1           # Delete created files (before and after running tasks).
 DOCONVERT=1         # Convert AliESDs.root to AO2D.root.
-DOALI=1             # Run AliPhysics tasks.
+DOALI=0             # Run AliPhysics tasks.
 DOO2=1              # Run O2 tasks.
 DOPOSTPROCESS=1     # Run output postprocessing. (Comparison plots. Requires DOALI=1 and/or DOO2=1)
 
@@ -50,7 +50,7 @@ DOO2_CAND_B0=0      # hf-candidate-creator-b0
 DOO2_CAND_BPLUS=0   # hf-candidate-creator-bplus
 DOO2_CAND_DSTAR=0   # hf-candidate-creator-dstar
 DOO2_CAND_XIC0OC0=0 # hf-candidate-creator-xic0-omegac0
-DOO2_CAND_XIC_XIPIPI=1 # hf-candidate-creator-xic-to-xi-pi-pi
+DOO2_CAND_XIC_XIPIPI=0 # hf-candidate-creator-xic-to-xi-pi-pi
 # Selectors
 DOO2_SEL_D0=0       # hf-candidate-selector-d0
 DOO2_SEL_DS=0       # hf-candidate-selector-ds-to-k-k-pi
@@ -67,7 +67,7 @@ DOO2_SEL_B0=0       # hf-candidate-selector-b0-to-d-pi
 DOO2_SEL_BPLUS=0    # hf-candidate-selector-bplus-to-d0-pi
 DOO2_SEL_DSTAR=0    # hf-candidate-selector-dstar
 DOO2_SEL_TOXIPI=0   # hf-candidate-selector-to-xi-pi
-DOO2_SEL_XIC_XIPIPI=1   # hf-candidate-selector-xic-to-xi-pi-pi
+DOO2_SEL_XIC_XIPIPI=0   # hf-candidate-selector-xic-to-xi-pi-pi
 # Analysis tasks
 DOO2_TASK_D0=0      # hf-task-d0
 DOO2_TASK_DS=0      # hf-task-ds
@@ -83,7 +83,7 @@ DOO2_TASK_XICC=0    # hf-task-xicc
 DOO2_TASK_B0=0      # hf-task-b0
 DOO2_TASK_BPLUS=0   # hf-task-bplus
 DOO2_TASK_DSTAR=0   # hf-task-dstar-to-d0-pi
-DOO2_TASK_XIC_XIPIPI=1  # hf-task-xic-to-xi-pi-pi
+DOO2_TASK_XIC_XIPIPI=0  # hf-task-xic-to-xi-pi-pi
 # Tree creators
 DOO2_TREE_D0=0      # hf-tree-creator-d0-to-k-pi
 DOO2_TREE_LC=0      # hf-tree-creator-lc-to-p-k-pi (only Run 3)
@@ -94,7 +94,7 @@ DOO2_TREE_CHIC=0    # hf-tree-creator-chic-to-jpsi-gamma
 DOO2_TREE_BPLUS=0   # hf-tree-creator-bplus-to-d0-pi
 DOO2_TREE_LCK0SP=0  # hf-tree-creator-lc-to-k0s-p
 DOO2_TREE_TOXIPI=0  # hf-tree-creator-to-xi-pi
-DOO2_TREE_XIC_XIPIPI=1  # hf-tree-creator-xic-to-xi-pi-pi
+DOO2_TREE_XIC_XIPIPI=0  # hf-tree-creator-xic-to-xi-pi-pi
 # Derived-data creators
 DOO2_DATA_D0=0      # hf-derived-data-creator-d0-to-k-pi
 DOO2_DATA_LC=0      # hf-derived-data-creator-lc-to-p-k-pi
@@ -121,12 +121,13 @@ DOO2_JET_SUB_OUT=0  # je-jet-substructure-d0-output
 DOO2_REJ_ALICE3=0   # hf-task-qa-pid-rejection
 DOO2_QA_EFF=0       # qa-efficiency
 DOO2_QA_EVTRK=0     # qa-event-track
-DOO2_MC_VALID=0     # hf-task-mc-validation
+DOO2_MC_VALID=1     # hf-task-mc-validation
 # PID
 DOO2_PID_TPC=0      # pid-tpc
 DOO2_PID_TOF=0      # pid-tof-full/alice3-pid-tof
 DOO2_PID_TOF_QA=0   # pid-tof-qa-mc
 DOO2_PID_BAYES=0    # pid-bayes
+DOO2_HF_PID_CREATOR=0 # o2-analysis-hf-pid-creator
 # Converters (Consider setting these per input case via INPUT_TASK_CONFIG.)
 DOO2_CONV_MC=0         # mc-converter
 DOO2_CONV_FDD=0        # fdd-converter
@@ -141,10 +142,10 @@ DOO2_CONV_V0=0         # v0converter
 DOO2_CONV_MFT=0        # mft-tracks-converter
 
 # Selection cuts
-APPLYCUTS_D0=1      # Apply D0 selection cuts.
+APPLYCUTS_D0=0      # Apply D0 selection cuts.
 APPLYCUTS_DS=0      # Apply Ds selection cuts.
 APPLYCUTS_DPLUS=0   # Apply D+ selection cuts.
-APPLYCUTS_LC=1      # Apply Λc selection cuts.
+APPLYCUTS_LC=0      # Apply Λc selection cuts.
 APPLYCUTS_LB=0      # Apply Λb selection cuts.
 APPLYCUTS_XIC=0     # Apply Ξc selection cuts.
 APPLYCUTS_JPSI=0    # Apply J/ψ selection cuts.
@@ -547,6 +548,7 @@ function MakeScriptO2 {
   [ $DOO2_PID_BAYES -eq 1 ] && WORKFLOWS+=" o2-analysis-pid-bayes"
   [ $DOO2_PID_TOF -eq 1 ] && WORKFLOWS+=" o2-analysis-pid-tof-full${SUFFIX_RUN}"
   [ $DOO2_PID_TOF_QA -eq 1 ] && WORKFLOWS+=" o2-analysis-pid-tof-qa-mc"
+  [ $DOO2_HF_PID_CREATOR -eq 1 ] && WORKFLOWS+=" o2-analysis-hf-pid-creator"
   # Converters
   [ $DOO2_CONV_MC -eq 1 ] && WORKFLOWS+=" o2-analysis-mc-converter"
   [ $DOO2_CONV_FDD -eq 1 ] && WORKFLOWS+=" o2-analysis-fdd-converter"
