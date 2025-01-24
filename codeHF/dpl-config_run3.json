@@ -1181,7 +1181,7 @@
         "processXicplusWithKFParticle": "false"
     },
     "hf-candidate-creator-xic-to-xi-pi-pi-expressions": {
-        "processMc": "false"
+        "processMc": "true"
     },
     "hf-candidate-selector-b0-to-d-pi": {
         "ptCandMin": "0",
@@ -6837,15 +6837,63 @@
         "processMcWithKFParticleAndML": "false"
     },
     "hf-task-mc-validation-gen": {
-        "xVertexMin": "-100",
-        "xVertexMax": "100",
-        "yVertexMin": "-100",
-        "yVertexMax": "100",
-        "zVertexMin": "-100",
-        "zVertexMax": "100"
+        "eventGeneratorType": "-1",
+        "rejectParticlesFromBkgEvent": "false",
+        "storeOccupancy": "false",
+        "processNoCentSel": "true",
+        "processCentFT0C": "false",
+        "processCentFT0M": "false"
     },
     "hf-task-mc-validation-rec": {
-        "checkAmbiguousTracksWithHfEventsOnly": "false"
+        "eventGeneratorType": "-1",
+        "storeOccupancy": "false",
+        "hfEvSel": {
+            "centralityMin": "0",
+            "centralityMax": "100",
+            "useSel8Trigger": "false",
+            "triggerClass": "-1",
+            "useTvxTrigger": "true",
+            "useTimeFrameBorderCut": "false",
+            "useItsRofBorderCut": "false",
+            "useIsGoodZvtxFT0vsPV": "false",
+            "useNoSameBunchPileup": "false",
+            "useOccupancyCut": "false",
+            "occEstimator": "1",
+            "occupancyMin": "0",
+            "occupancyMax": "1000000",
+            "nPvContributorsMin": "0",
+            "chi2PvMax": "-1",
+            "zPvPosMin": "-10",
+            "zPvPosMax": "10",
+            "useNoCollInTimeRangeNarrow": "false",
+            "useNoCollInTimeRangeStandard": "false",
+            "useNoCollInRofStandard": "false",
+            "softwareTrigger": "",
+            "bcMarginForSoftwareTrigger": "100",
+            "ccdbPathSoftwareTrigger": "Users\/m\/mpuccio\/EventFiltering\/OTS\/Chunked\/",
+            "th2ConfigAxisCent": {
+                "values": [
+                    "100",
+                    "0",
+                    "100"
+                ]
+            },
+            "th2ConfigAxisOccupancy": {
+                "values": [
+                    "14",
+                    "0",
+                    "140000"
+                ]
+            }
+        },
+        "processColl": "true",
+        "processCollWithCentFTOC": "false",
+        "processCollWithCentFTOM": "false",
+        "processCollAssoc": "false",
+        "processCollAssocWithCentFTOC": "false",
+        "processCollAssocWithCentFTOM": "false",
+        "processEffNoCent": "true",
+        "processEffCentFT0C": "false"
     },
     "hf-tree-creator-d0-to-k-pi": {
         "fillCandidateLiteTable": "false",
@@ -6887,14 +6935,14 @@
     "hf-tree-creator-xic-to-xi-pi-pi": {
         "selectionFlagXic": "1",
         "fillCandidateLiteTable": "false",
-        "fillGenParticleTable": "false",
+        "fillGenParticleTable": "true",
         "fillOnlySignal": "true",
         "fillOnlyBackground": "false",
         "downSampleBkgFactor": "1",
         "ptMaxForDownSample": "10",
-        "processData": "true",
+        "processData": "false",
         "processDataKf": "false",
-        "processMc": "false",
+        "processMc": "true",
         "processMcKf": "false",
         "processResiduals": "false"
     },

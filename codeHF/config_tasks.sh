@@ -50,7 +50,7 @@ DOO2_CAND_B0=0      # hf-candidate-creator-b0
 DOO2_CAND_BPLUS=0   # hf-candidate-creator-bplus
 DOO2_CAND_DSTAR=0   # hf-candidate-creator-dstar
 DOO2_CAND_XIC0OC0=0 # hf-candidate-creator-xic0-omegac0
-DOO2_CAND_XIC_XIPIPI=0 # hf-candidate-creator-xic-to-xi-pi-pi
+DOO2_CAND_XIC_XIPIPI=1 # hf-candidate-creator-xic-to-xi-pi-pi
 # Selectors
 DOO2_SEL_D0=0       # hf-candidate-selector-d0
 DOO2_SEL_DS=0       # hf-candidate-selector-ds-to-k-k-pi
@@ -67,7 +67,7 @@ DOO2_SEL_B0=0       # hf-candidate-selector-b0-to-d-pi
 DOO2_SEL_BPLUS=0    # hf-candidate-selector-bplus-to-d0-pi
 DOO2_SEL_DSTAR=0    # hf-candidate-selector-dstar
 DOO2_SEL_TOXIPI=0   # hf-candidate-selector-to-xi-pi
-DOO2_SEL_XIC_XIPIPI=0   # hf-candidate-selector-xic-to-xi-pi-pi
+DOO2_SEL_XIC_XIPIPI=1   # hf-candidate-selector-xic-to-xi-pi-pi
 # Analysis tasks
 DOO2_TASK_D0=0      # hf-task-d0
 DOO2_TASK_DS=0      # hf-task-ds
@@ -83,7 +83,7 @@ DOO2_TASK_XICC=0    # hf-task-xicc
 DOO2_TASK_B0=0      # hf-task-b0
 DOO2_TASK_BPLUS=0   # hf-task-bplus
 DOO2_TASK_DSTAR=0   # hf-task-dstar-to-d0-pi
-DOO2_TASK_XIC_XIPIPI=0  # hf-task-xic-to-xi-pi-pi
+DOO2_TASK_XIC_XIPIPI=1  # hf-task-xic-to-xi-pi-pi
 # Tree creators
 DOO2_TREE_D0=0      # hf-tree-creator-d0-to-k-pi
 DOO2_TREE_LC=0      # hf-tree-creator-lc-to-p-k-pi (only Run 3)
@@ -94,7 +94,7 @@ DOO2_TREE_CHIC=0    # hf-tree-creator-chic-to-jpsi-gamma
 DOO2_TREE_BPLUS=0   # hf-tree-creator-bplus-to-d0-pi
 DOO2_TREE_LCK0SP=0  # hf-tree-creator-lc-to-k0s-p
 DOO2_TREE_TOXIPI=0  # hf-tree-creator-to-xi-pi
-DOO2_TREE_XIC_XIPIPI=0  # hf-tree-creator-xic-to-xi-pi-pi
+DOO2_TREE_XIC_XIPIPI=1  # hf-tree-creator-xic-to-xi-pi-pi
 # Derived-data creators
 DOO2_DATA_D0=0      # hf-derived-data-creator-d0-to-k-pi
 DOO2_DATA_LC=0      # hf-derived-data-creator-lc-to-p-k-pi
