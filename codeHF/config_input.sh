@@ -160,8 +160,8 @@ case $INPUT_CASE in
     INPUT_FILES="AO2D.root"
     INPUT_RUN=3
     INPUT_IS_O2=1
-    INPUT_IS_MC=1
-    INPUT_TASK_CONFIG="DOO2_CONV_MCCOLL=1 DOO2_CONV_TRKEX_1_2=1 DOO2_TRCKSEL=1"
+    INPUT_IS_MC=0
+    INPUT_TASK_CONFIG="DOO2_CONV_TRKEX_1_2=1 DOO2_TRCKSEL=1"
     INPUT_PARENT_MASK="/home/alitrain/train-workdir/testdata/LFN/alice/sim/2024/LHC24e3/1/528531/AOD/;/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/parentAO2D/"
     ;;
   esac

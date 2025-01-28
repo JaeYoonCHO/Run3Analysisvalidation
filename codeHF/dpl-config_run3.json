@@ -1181,7 +1181,7 @@
         "processXicplusWithKFParticle": "false"
     },
     "hf-candidate-creator-xic-to-xi-pi-pi-expressions": {
-        "processMc": "true"
+        "processMc": "false"
     },
     "hf-candidate-selector-b0-to-d-pi": {
         "ptCandMin": "0",
@@ -5871,7 +5871,7 @@
         "ptPidTofMax": "20",
         "nSigmaTofMax": "5",
         "nSigmaTofCombinedMax": "5",
-        "applyMl": "false",
+        "applyMl": "true",
         "binsPtMl": {
             "values": [
                 "0",
@@ -5882,18 +5882,17 @@
                 "5",
                 "6",
                 "8",
-                "10",
                 "12",
-                "16",
                 "24",
-                "50"
+                "36",
+                "50",
+                "100"
             ]
         },
         "cutDirMl": {
             "values": [
-                "0",
-                "1",
-                "1"
+                "2",
+                "2"
             ]
         },
         "cutsMl": {
@@ -5918,83 +5917,111 @@
             ],
             "values": [
                 [
-                    "0.5",
-                    "0.5",
-                    "0.5"
+                    "0.0",
+                    "0.0",
+                    "0.0"
                 ],
                 [
-                    "0.5",
-                    "0.5",
-                    "0.5"
+                    "0.0",
+                    "0.0",
+                    "0.0"
                 ],
                 [
-                    "0.5",
-                    "0.5",
-                    "0.5"
+                    "0.0",
+                    "0.0",
+                    "0.0"
                 ],
                 [
-                    "0.5",
-                    "0.5",
-                    "0.5"
+                    "0.0",
+                    "0.0",
+                    "0.0"
                 ],
                 [
-                    "0.5",
-                    "0.5",
-                    "0.5"
+                    "0.0",
+                    "0.0",
+                    "0.0"
                 ],
                 [
-                    "0.5",
-                    "0.5",
-                    "0.5"
+                    "0.0",
+                    "0.0",
+                    "0.0"
                 ],
                 [
-                    "0.5",
-                    "0.5",
-                    "0.5"
+                    "0.0",
+                    "0.0",
+                    "0.0"
                 ],
                 [
-                    "0.5",
-                    "0.5",
-                    "0.5"
+                    "0.0",
+                    "0.0",
+                    "0.0"
                 ],
                 [
-                    "0.5",
-                    "0.5",
-                    "0.5"
+                    "0.0",
+                    "0.0",
+                    "0.0"
                 ],
                 [
-                    "0.5",
-                    "0.5",
-                    "0.5"
+                    "0.0",
+                    "0.0",
+                    "0.0"
                 ],
                 [
-                    "0.5",
-                    "0.5",
-                    "0.5"
+                    "0.0",
+                    "0.0",
+                    "0.0"
                 ],
                 [
-                    "0.5",
-                    "0.5",
-                    "0.5"
+                    "0.0",
+                    "0.0",
+                    "0.0"
                 ]
             ]
         },
-        "nClassesMl": "3",
+        "nClassesMl": "2",
         "namesInputFeatures": {
             "values": [
-                "feature1",
-                "feature2"
+                "cpa",
+                "invMassXi",
+                "invMassLambda",
+                "decayLength",
+                "impactParameterXi",
+                "impactParameterPi0",
+                "impactParameterPi1",
+                "dcaXYCascToPV" 
             ]
         },
         "ccdbUrl": "http:\/\/alice-ccdb.cern.ch",
         "modelPathsCCDB": {
             "values": [
-                "EventFiltering\/PWGHF\/BDTXicToXiPiPi"
+                "Users/j/jcho/My/Object/model_4_to_6",
+                "Users/j/jcho/My/Object/model_4_to_6",
+                "Users/j/jcho/My/Object/model_4_to_6",
+                "Users/j/jcho/My/Object/model_4_to_6",
+                "Users/j/jcho/My/Object/model_4_to_6",
+                "Users/j/jcho/My/Object/model_4_to_6",
+                "Users/j/jcho/My/Object/model_4_to_6",
+                "Users/j/jcho/My/Object/model_4_to_6",
+                "Users/j/jcho/My/Object/model_4_to_6",
+                "Users/j/jcho/My/Object/model_4_to_6",
+                "Users/j/jcho/My/Object/model_4_to_6",
+                "Users/j/jcho/My/Object/model_4_to_6"
             ]
         },
         "onnxFileNames": {
             "values": [
-                "ModelHandler_onnx_XicToXiPiPi.onnx"
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx"
             ]
         },
         "timestampCCDB": "-1",
@@ -6700,7 +6727,7 @@
         "processMC": "false"
     },
     "hf-task-xic-to-xi-pi-pi": {
-        "selectionFlagXic": "1",
+        "selectionFlagXic": "0",
         "yCandGenMax": "0.5",
         "yCandRecoMax": "0.800000012",
         "etaTrackMax": "0.800000012",
@@ -6712,7 +6739,7 @@
                 "2",
                 "3",
                 "4",
-                "5",
+                "5", 
                 "6",
                 "8",
                 "12",
@@ -6721,7 +6748,7 @@
             ]
         },
         "checkDecayTypeMc": "false",
-        "enableTHn": "false",
+        "enableTHn": "true",
         "thnConfigAxisPt": {
             "values": [
                 "400",
@@ -6829,9 +6856,9 @@
         },
         "processWithDCAFitter": "false",
         "processWithKFParticle": "false",
-        "processWithDCAFitterAndML": "false",
+        "processWithDCAFitterAndML": "true",
         "processWithKFParticleAndML": "false",
-        "processMcWithDCAFitter": "true",
+        "processMcWithDCAFitter": "false",
         "processMcWithKFParticle": "false",
         "processMcWithDCAFitterAndML": "false",
         "processMcWithKFParticleAndML": "false"
