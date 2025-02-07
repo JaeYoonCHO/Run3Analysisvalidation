@@ -5988,7 +5988,7 @@
                 "impactParameterXi",
                 "impactParameterPi0",
                 "impactParameterPi1",
-                "dcaXYCascToPV" 
+                "dcaXYCascToPV"
             ]
         },
         "ccdbUrl": "http:\/\/alice-ccdb.cern.ch",
