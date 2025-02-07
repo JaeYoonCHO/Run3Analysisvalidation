@@ -5994,18 +5994,18 @@
         "ccdbUrl": "http:\/\/alice-ccdb.cern.ch",
         "modelPathsCCDB": {
             "values": [
-                "Users/j/jcho/My/Object/model_4_to_6",
-                "Users/j/jcho/My/Object/model_4_to_6",
-                "Users/j/jcho/My/Object/model_4_to_6",
-                "Users/j/jcho/My/Object/model_4_to_6",
-                "Users/j/jcho/My/Object/model_4_to_6",
-                "Users/j/jcho/My/Object/model_4_to_6",
-                "Users/j/jcho/My/Object/model_4_to_6",
-                "Users/j/jcho/My/Object/model_4_to_6",
-                "Users/j/jcho/My/Object/model_4_to_6",
-                "Users/j/jcho/My/Object/model_4_to_6",
-                "Users/j/jcho/My/Object/model_4_to_6",
-                "Users/j/jcho/My/Object/model_4_to_6"
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx"
             ]
         },
         "onnxFileNames": {
@@ -6805,12 +6805,19 @@
                 "1"
             ]
         },
-        "thnConfigAxisBdtScoreSignal": {
+        "thnConfigAxisBdtScorePrompt": {
             "values": [
                 "100",
                 "0",
                 "1"
             ]
+        },
+        "thnConfigAxisBdtScoreNonPrompt": {
+            "values": [
+                "100",
+                "0",
+                "1"
+            ] 
         },
         "binsDecLength": {
             "values": [
