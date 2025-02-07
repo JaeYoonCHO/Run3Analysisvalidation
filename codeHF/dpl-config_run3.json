@@ -5892,6 +5892,7 @@
         "cutDirMl": {
             "values": [
                 "2",
+                "2",
                 "2"
             ]
         },
@@ -5978,17 +5979,10 @@
                 ]
             ]
         },
-        "nClassesMl": "2",
+        "nClassesMl": "3",
         "namesInputFeatures": {
             "values": [
-                "cpa",
-                "invMassXi",
-                "invMassLambda",
-                "decayLength",
-                "impactParameterXi",
-                "impactParameterPi0",
-                "impactParameterPi1",
-                "dcaXYCascToPV" 
+                "cpa"
             ]
         },
         "ccdbUrl": "http:\/\/alice-ccdb.cern.ch",
@@ -6010,18 +6004,18 @@
         },
         "onnxFileNames": {
             "values": [
-                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
-                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
-                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
-                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
-                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
-                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
-                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
-                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
-                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
-                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
-                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx",
-                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Binaryclass_2_to_3.onnx"
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Multiclass_3_to_4.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Multiclass_3_to_4.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Multiclass_3_to_4.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Multiclass_3_to_4.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Multiclass_3_to_4.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Multiclass_3_to_4.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Multiclass_3_to_4.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Multiclass_3_to_4.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Multiclass_3_to_4.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Multiclass_3_to_4.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Multiclass_3_to_4.onnx",
+                "/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/codeHF/model_onnx_Multiclass_3_to_4.onnx"
             ]
         },
         "timestampCCDB": "-1",
