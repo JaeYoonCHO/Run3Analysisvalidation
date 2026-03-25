@@ -37,6 +37,7 @@ MAKE_PERF_STATS=0            # Produce performance profiling stats.
 DOO2_TRCKSEL=0      # trackselection
 # Trigger selection
 DOO2_TRIGSEL=0      # event-selection
+DOO2_EVTSELSERVICE=0 # event-selection-service
 # Vertexing
 DOO2_SKIM=0         # hf-track-index-skim-creator
 DOO2_CAND_2PRONG=0  # hf-candidate-creator-2prong
@@ -141,12 +142,12 @@ DOO2_CONV_V0=0         # v0converter
 DOO2_CONV_MFT=0        # mft-tracks-converter
 
 # Selection cuts
-APPLYCUTS_D0=1      # Apply D0 selection cuts.
+APPLYCUTS_D0=0      # Apply D0 selection cuts.
 APPLYCUTS_DS=0      # Apply Ds selection cuts.
 APPLYCUTS_DPLUS=0   # Apply D+ selection cuts.
 APPLYCUTS_LC=1      # Apply Λc selection cuts.
 APPLYCUTS_LB=0      # Apply Λb selection cuts.
-APPLYCUTS_XIC=0     # Apply Ξc selection cuts.
+APPLYCUTS_XIC=1     # Apply Ξc selection cuts.
 APPLYCUTS_JPSI=0    # Apply J/ψ selection cuts.
 APPLYCUTS_X=0       # Apply X selection cuts.
 APPLYCUTS_CHIC=0    # Apply χc(1p) selection cuts.
@@ -448,6 +449,7 @@ function MakeScriptO2 {
   [ $DOO2_TRCKSEL -eq 1 ] && WORKFLOWS+=" o2-analysis-trackselection"
   # Trigger selection
   [ $DOO2_TRIGSEL -eq 1 ] && WORKFLOWS+=" o2-analysis-event-selection"
+  [ $DOO2_EVTSELSERVICE -eq 1 ] && WORKFLOWS+=" o2-analysis-event-selection-service"
   # Vertexing
   [ $DOO2_SKIM -eq 1 ] && WORKFLOWS+=" o2-analysis-hf-track-index-skim-creator${SUFFIX_SKIM}"
   [ $DOO2_CAND_2PRONG -eq 1 ] && WORKFLOWS+=" o2-analysis-hf-candidate-creator-2prong${SUFFIX_DER}"

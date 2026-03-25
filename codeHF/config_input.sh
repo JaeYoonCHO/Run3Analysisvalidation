@@ -4,7 +4,7 @@
 # Input specification for runtest.sh
 # (Modifies input parameters.)
 
-INPUT_CASE=17            # Input case
+INPUT_CASE=20            # Input case
 
 NFILESMAX=1             # Maximum number of processed input files. (Set to -0 to process all; to -N to process all but the last N files.)
 
@@ -156,12 +156,51 @@ case $INPUT_CASE in
     ;;
    17)
     INPUT_LABEL="My task for XicToXiPiPi"
+    INPUT_DIR="/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/derivedAO2D/LHC24j6/"
+    INPUT_FILES="AO2D.root"
+    INPUT_RUN=3
+    INPUT_IS_O2=1
+    INPUT_IS_MC=1
+    INPUT_TASK_CONFIG="DOO2_CONV_TRKEX_1_2=1 DOO2_EVTSELSERVICE=1 DOO2_CONV_MCCOLL=1 DOO2_CONV_TRKEX_1_2=1"
+    INPUT_PARENT_MASK="/home/alitrain/train-workdir/testdata/LFN/alice/sim/2024/LHC24j6/0/535069/AOD/;/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/parentAO2D/LHC24j6/"
+    ;;
+   18)
+    INPUT_LABEL="Task Xic0 to Xi pi"
+    INPUT_DIR="/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/derivedAO2D/LHC24j6/"
+    INPUT_FILES="AO2D.root"
+    INPUT_RUN=3
+    INPUT_IS_O2=1
+    INPUT_IS_MC=1
+    INPUT_TASK_CONFIG="DOO2_CONV_TRKEX_1_2=1 DOO2_TRCKSEL=1 DOO2_CONV_MCCOLL=1 DOO2_CONV_TRKEX_1_2=1"
+    INPUT_PARENT_MASK="/home/alitrain/train-workdir/testdata/LFN/alice/sim/2024/LHC24j6/0/535069/AOD/;/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/parentAO2D/LHC24j6/"
+    ;;
+   19)
+    INPUT_LABEL="Task Xic0 to Xi pi with LHC24e3"
     INPUT_DIR="/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/derivedAO2D/"
     INPUT_FILES="AO2D.root"
     INPUT_RUN=3
     INPUT_IS_O2=1
-    INPUT_IS_MC=0
-    INPUT_TASK_CONFIG="DOO2_CONV_TRKEX_1_2=1 DOO2_TRCKSEL=1"
+    INPUT_IS_MC=1
+    INPUT_TASK_CONFIG="DOO2_CONV_TRKEX_1_2=1 DOO2_TRCKSEL=1 DOO2_CONV_MCCOLL=1 DOO2_CONV_TRKEX_1_2=1"
     INPUT_PARENT_MASK="/home/alitrain/train-workdir/testdata/LFN/alice/sim/2024/LHC24e3/1/528531/AOD/;/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/parentAO2D/"
+    ;;
+   20)
+    INPUT_LABEL="XicToXiPiPi MC QA"
+    INPUT_DIR="/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/derivedAO2D/LHC24j6/"
+    INPUT_FILES="AO2D.root"
+    INPUT_RUN=3
+    INPUT_IS_O2=1
+    INPUT_IS_MC=1
+    INPUT_TASK_CONFIG="DOO2_CONV_MCCOLL=1 DOO2_TRIGSEL=1 DOO2_CONV_TRKEX_1_2=1 DOO2_TRCKSEL=1"
+    INPUT_PARENT_MASK="/home/alitrain/train-workdir/testdata/LFN/alice/sim/2024/LHC24j6/0/535069/AOD/;/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/parentAO2D/LHC24j6/"
+    ;;
+   21)
+    INPUT_LABEL="PbPb XicToXiPiPi Study derived data"
+    INPUT_DIR="/Users/jaeyooncho/myAnalysis/Run3Analysisvalidation/parentAO2D/PbPbLHC23_pass4_Thin_small_535725/"
+    INPUT_FILES="AO2D.root"
+    INPUT_RUN=3
+    INPUT_IS_O2=1
+    INPUT_IS_MC=0
+    INPUT_TASK_CONFIG="DOO2_CONV_MCCOLL=1 DOO2_TRIGSEL=1 DOO2_CONV_TRKEX_1_2=1 DOO2_TRCKSEL=1"
     ;;
   esac
