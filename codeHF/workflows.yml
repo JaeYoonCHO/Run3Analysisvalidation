@@ -6,6 +6,7 @@ options:
     - "--aod-parent-base-path-replacement \"PARENT_PATH_MASK\""
     - "--aod-parent-access-level 1"
     - "--resources-monitoring 2"
+    - "--aod-writer-json ../../OutputDirector.json"
   local:  # used for every workflow
     - "-b"
     - "--configuration json://\"$JSON\""
@@ -602,7 +603,8 @@ workflows:
   o2-analysis-hf-task-mc-validation:
     requires_mc: yes
     dependencies: [o2-analysis-hf-candidate-creator-2prong_derX, o2-analysis-hf-candidate-creator-3prong_derX]
-
+    #dependencies: o2-analysis-hf-candidate-creator-2prong_derX
+ 
   # Helper tasks
 
   o2-analysis-track-to-collision-associator:
@@ -627,8 +629,8 @@ workflows:
     dependencies: o2-analysis-timestamp
 
   o2-analysis-track-dca_run3:
-    executable: o2-analysis-track-propagation
-    dependencies: o2-analysis-timestamp
+    executable: o2-analysis-propagationservice
+    dependencies: o2-analysis-event-selection-service_run3
 
   o2-analysis-track-dca_run5:
     executable: o2-analysis-alice3-trackextension
@@ -646,8 +648,11 @@ workflows:
 
   o2-analysis-lf-mc-centrality: {}
 
-  o2-analysis-event-selection:
-    dependencies: o2-analysis-timestamp
+  o2-analysis-event-selection-service_run2:
+    executable: o2-analysis-event-selection-service-run2
+
+  o2-analysis-event-selection-service_run3:
+    executable: o2-analysis-event-selection-service
 
   o2-analysis-multiplicity-table_run2:
     executable: o2-analysis-multiplicity-table
@@ -663,7 +668,7 @@ workflows:
   o2-analysis-pid-tpc-base: {}
 
   o2-analysis-pid-tpc:
-    dependencies: [o2-analysis-pid-tpc-base, o2-analysis-timestamp]
+    dependencies: o2-analysis-pid-tpc-base
 
   o2-analysis-pid-tof-base_run2:
     executable: o2-analysis-pid-tof-base
@@ -679,7 +684,7 @@ workflows:
 
   o2-analysis-pid-tof-full_run3:
     executable: o2-analysis-pid-tof-full
-    dependencies: [o2-analysis-pid-tof-base_run3, o2-analysis-timestamp]
+    dependencies: o2-analysis-pid-tof-base_run3
 
   o2-analysis-pid-tof-full_run5:
     executable: o2-analysis-alice3-pid-tof
@@ -714,7 +719,7 @@ workflows:
   # LF
 
   o2-analysis-lf-lambdakzerobuilder:
-    dependencies: [o2-analysis-timestamp, o2-analysis-track-dca_runX, o2-analysis-pid-tpc]
+    dependencies: [o2-analysis-track-dca_runX, o2-analysis-pid-tpc]
 
   o2-analysis-lf-cascadebuilder:
-    dependencies: [o2-analysis-timestamp, o2-analysis-track-dca_runX, o2-analysis-pid-tpc]
+    dependencies: [o2-analysis-track-dca_runX, o2-analysis-pid-tpc]
